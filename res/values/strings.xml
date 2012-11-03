@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name">Maven Android Scala Prototype</string>
+  <string name="app_name">SoundCloud</string>
+  <string name="wallpaper_desc">SoundCloud Random WaveForm Wallpaper</string>
+  <string name="service_preferences">SoundCloud Preferences</string>
 </resources>

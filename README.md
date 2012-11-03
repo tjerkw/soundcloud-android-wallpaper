@@ -1,3 +1,12 @@
+# Android SoundCloud WaveForm Wallpaper #
+
+This android wallpaper is written in Scala and depends on the following soundcloud library:
+- https://github.com/soundcloud/java-api-wrapper.git
+
+Perform a "mvn clean install" on the java-api-wrapper project first to make sure its in your local maven repository.
+
+This project started as a fork of the https://github.com/comb/maven-android-scala-prototype/ project.
+
 # Maven Android Scala Prototype #
 This setup works. We use it with multiple clients.
 
