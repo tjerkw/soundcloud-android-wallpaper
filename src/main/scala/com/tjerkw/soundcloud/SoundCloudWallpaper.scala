@@ -101,6 +101,7 @@ class SoundCloudWallpaper extends WallpaperService {
               startActivity(i)
             }
           }
+          case _ =>
         }
       }
     }
