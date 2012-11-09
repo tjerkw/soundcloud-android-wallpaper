@@ -7,7 +7,7 @@ import android.util.Log
  * always use the same tag
  */
 object Logger {
-  val tag = "SoundCloudWallpaper"
+  private val tag = "SoundCloudWallpaper"
 
   def e(msg:String) = Log.e(tag, msg)
   def d(msg:String) = Log.d(tag, msg)

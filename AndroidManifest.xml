@@ -16,7 +16,6 @@
   <application
       a:debuggable="true"
       a:label="@string/app_name"
-      a:icon="@drawable/android:star_big_on"
       a:installLocation="auto"
       >
     <service

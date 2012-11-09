@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <PreferenceScreen xmlns:a="http://schemas.android.com/apk/res/android">
 
+    <PreferenceCategory a:title="@string/credentials" >
+        <EditTextPreference
+                a:title="@string/username"
+                a:key="username"/>
+        <EditTextPreference
+                a:title="@string/password"
+                a:key="password"
+                a:password="true"/>
+    </PreferenceCategory>
+    <PreferenceCategory a:title="@string/look_and_feel" >
+        <CheckBoxPreference
+                a:title="@string/enable_color"
+                a:defaultValue="true"
+                a:key="enableColorRotate" />
+        <CheckBoxPreference
+                a:title="@string/enable_blur"
+                a:defaultValue="true"
+                a:key="enableBlur" />
+    </PreferenceCategory>
 </PreferenceScreen>

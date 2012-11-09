@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <wallpaper xmlns:a="http://schemas.android.com/apk/res/android"
     a:thumbnail="@drawable/ic_launcher"
-    a:description="@string/wallpaper_desc" />
+    a:description="@string/wallpaper_desc"
+    a:settingsActivity="com.tjerkw.soundcloud.PreferencesActivity"/>
