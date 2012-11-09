@@ -1,8 +1,8 @@
 package com.tjerkw.soundcloud
 
 import android.service.wallpaper.WallpaperService
-import android.view.{MotionEvent, SurfaceHolder}
-import android.os.Handler
+import android.view.SurfaceHolder
+import android.os.{Bundle, Handler}
 import android.graphics._
 import android.graphics.BlurMaskFilter.Blur
 import java.util.Random
@@ -78,32 +78,15 @@ class SoundCloudWallpaper extends WallpaperService {
       handler post runnable
     }
 
-    var touchX = 0f
-    var touchY = 0f
-    // maximum of movement which will trigger the open action
-    val maxMov = 5f
-
-    /**
-     * Open the track uri if the user taps the surface (without movement)
-     */
-    override def onTouchEvent(e:MotionEvent) {
-      if (waveform!=null) {
-        e.getAction match {
-          case MotionEvent.ACTION_DOWN => {
-            touchX = e.getX
-            touchY = e.getY
-          }
-          case MotionEvent.ACTION_UP => {
-            if(Math.abs(touchX - e.getX) < maxMov && Math.abs(touchY - e.getY) < maxMov) {
-              val i = new Intent(Intent.ACTION_VIEW)
-              i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-              i setData (Uri parse waveform.track.uri )
-              startActivity(i)
-            }
-          }
-          case _ =>
-        }
+    override def onCommand(action:String, x:Int, y:Int, z:Int,
+      bundle:Bundle, resultRequested:Boolean) {
+      if ("android.wallpaper.tap".equals(action)) {
+        val i = new Intent(Intent.ACTION_VIEW)
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        i setData (Uri parse waveform.track.uri )
+        startActivity(i)
       }
+      return super.onCommand(action, x, y, z, bundle, resultRequested);
     }
 
     override def onDestroy() {
