@@ -79,14 +79,15 @@ class SoundCloudWallpaper extends WallpaperService {
     }
 
     override def onCommand(action:String, x:Int, y:Int, z:Int,
-      bundle:Bundle, resultRequested:Boolean) {
-      if ("android.wallpaper.tap".equals(action)) {
+      bundle:Bundle, resultRequested:Boolean):Bundle =
+    {
+      if ("android.wallpaper.tap" == action) {
         val i = new Intent(Intent.ACTION_VIEW)
         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         i setData (Uri parse waveform.track.uri )
         startActivity(i)
       }
-      return super.onCommand(action, x, y, z, bundle, resultRequested);
+      super.onCommand(action, x, y, z, bundle, resultRequested)
     }
 
     override def onDestroy() {
