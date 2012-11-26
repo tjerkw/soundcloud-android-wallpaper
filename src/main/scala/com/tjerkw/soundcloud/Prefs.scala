@@ -7,7 +7,7 @@ class Prefs(prefs:SharedPreferences) {
   def getSoundCloudUrl = "http://soundcloud.com/get/2"
 
   def username = prefs.getString("username", "tjerkw")
-  def password = prefs.getString("password", "aabbccdd")
+  def password = prefs.getString("password", "ENTER_CORRECT_PASSWORD")
 
   def clientId = "874a6ca0b5a57c77f362e1788e6b331b"
   def clientSecret = "eb5dd6fad39806b3e334fccfc3956bed"
